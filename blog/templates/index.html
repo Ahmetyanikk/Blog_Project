@@ -12,13 +12,7 @@
 
 
 {{% block content %}
-    <header>
-    <h1><a href="">Manwe' Blog</a> </h1>
-    <nav>
-        <a href="">All Posts</a>
-    </nav>
-    </header>
-	<h1>Welcome to my blog</h1>
+
     <section id="welcome">
     <header>
         <img src="https://avatars.githubusercontent.com/u/73365349?v=4" alt="Manwe - THe Author Of This Blog"/>
@@ -31,33 +25,15 @@
     <h2> My Latest Thoughts</h2>
 
     <ul>
-        <li>
-            <article class="post">
-               <h2>My Latest Thoughts</h2>
-
-                <ul>
-                    <li>
-                        <article class="post">
-                            <a href="">
-                              <img src="{% static "images/mountains.jpg" %}" alt="Mountain Hiking" />
-                                <div class="post__content">
-                                    <h3>Mountain Hiking</h3>
-                                    <p>There's nothing like the views you get when hiking in the mountains!
-                                    And I wasn't even prepared for what happened whilst I was enjoying the view
-                                    </p>
-                                </div>
-                            </a>
-                        </article>
-                    </li>
-                </ul>
-            </article>
-        </li>
+        {% for post in posts %}
+        {%  include "includes/post.html" %}
+        {% endfor %}
     </ul>
     </section>
 
     <section id="about">
     <h2>What I Do</h2>
-    <p> I love programming, I love to hlep others and I enjoy exploring new technologies in general!</p>
+    <p> I love programming, I love to help others and I enjoy exploring new technologies in general!</p>
     <p>
         My goal is to keep on growing as a developer - and if I could help you do the same , I'd be very happy!
     </p>
